@@ -24,15 +24,17 @@ def calculator():
     continue_flag=True
     while continue_flag:
         operator=input("Enter the operation:")
+        #Check the existence of the operator
         if operator not in operations_dict:
             print("Recheck the operator")
             print("Choose any of the available opeators")
-            break
+            continue
         #Ask for the second number
         number_2=float(input("Enter the next number:"))
         function=operations_dict[operator]
         result=function(number_1,number_2)
         print(f"{number_1}{operator}{number_2}={result}")
+        #give a condition to proceed
         proceed=input("enter 'yes' to continue or 'no' to end the calculation:")
         if proceed=='yes':
             continue_flag=True
